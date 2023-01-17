@@ -1,5 +1,5 @@
 {
-  "name": "Go-APOD",
+  "name": "api-project-oliiversion",
   "description": "A CORS-enabled, no-auth wrapper to NASA's Astronomy Picture of the Day",
   "keywords": [ "NASA", "APOD", "API", "Go" ],
   "website": "https://apod.as93.net",
