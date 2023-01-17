@@ -4,103 +4,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  
-<!doctype html>
-<html>
-<head>
-  <!-- Site Info -->
-  <title>Go-APOD</title>
-  <meta name="description" content="A free, CORS-enabled, no-auth wrapper for NASA's APOD API">
-  <meta name="keywords" content="NASA, APOD, Astronomy Picture of the Day, API, CORS, Auth, GitHub, Lissy93">
-  <meta name="viewport" content="width=device-width">
-  
-  <!-- Import Key Assets -->
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script src="script.js"></script>
-  <link rel="icon" href="assets/pwa/favicon.ico">
-  <link rel="manifest" href="assets/pwa/manifest.json">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://metatags.io/">
-  <meta property="og:title" content="Go-APOD API - Astronomy Picture of the Day">
-  <meta property="og:description" content="A free, CORS-enabled, no-auth wrapper for NASA's APOD API">
-  <meta property="og:image" content="assets/pwa/banner.png">
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <!-- Site Info -->
+        <title>api-project-oliiversion</title>
+        <meta
+          name="description"
+          content="A free, CORS-enabled, no-auth wrapper for NASA's APOD API"
+        />
+        <meta
+          name="keywords"
+          content="NASA, APOD, Astronomy Picture of the Day, API, CORS, Auth, GitHub, Lissy93"
+        />
+        <meta name="viewport" content="width=device-width" />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://metatags.io/">
-  <meta property="twitter:title" content="Go-APOD API - Astronomy Picture of the Day">
-  <meta property="twitter:description" content="A free, CORS-enabled, no-auth wrapper for NASA's APOD API">
-  <meta property="twitter:image" content="assets/pwa/banner.png">
+        <!-- Import Key Assets -->
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <script src="script.js"></script>
+        <link rel="icon" href="assets/pwa/favicon.ico" />
+        <link rel="manifest" href="assets/pwa/manifest.json" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Kanit:wght@800&display=swap" rel="stylesheet"> 
-</head>
-<body>
-  <main>
-    <!-- Links to GH and API docs -->
-    <section class="link-wrapper">
-      <a href="https://github.com/lissy93/go-apod" class="link-to">
-        <p class="link-title">View on GitHub</p>
-        <div class="link-sub-wrap">
-          <img src="assets/icons/github.svg" class="link-icon" />
-          <p class="link-description">View and edit source code, or deploy your own instance</p>
-        </div>
-      </a>
-      <a href="#api-docs" class="link-to">
-        <p class="link-title">API Docs</p>
-        <div class="link-sub-wrap">
-          <img src="assets/icons/api-docs.svg" class="link-icon" />
-          <p class="link-description">A free, no-auth, CORS-enabled API for easily fetching APOD</p>
-        </div>
-      </a>
-    </section>
-    <!-- Todays image and description -->
-    <section class="today-wrapper" id="#today">
-      <h1 class="main-title">Astronomy Picture of the Day</h1>
-      <img
-        class="apod-picture"
-        id="apod-picture"
-        src="https://go-apod.herokuapp.com/image"
-        alt="Astronomy Picture of the Day"
-      />
-      <iframe class="apod-iframe" id="apod-dynamic-content"></iframe>
-      <div id="loader">
-        <img src="assets/icons/loader.svg" class="loader-svg" />
-        <p class="loader-text">Loading...</p>
-      </div>
-      <div id="error">
-        <p class="err-title">Error Fetching Data from NASA</p>
-        <p id="err-msg">Check the console for more info</p>
-      </div>
-      <div class="apod-info">
-        <h2 id="apod-title"></h2>
-        <p class="meta-wrap"><span id="apod-date"></span><span id="apod-copyright"></span></p>
-        <p id="apod-explanation"></p>
-        <a id="apod-hd-link"></a>
-      </div>
-    </section>
-    <!-- API docs -->
-    <section class="api-wrapper" id="api-docs">
-      <h2>API</h2>
-      <div class="part">
-        <h3>Raw Image</h3>
-        <div class="request-wrap">
-          <span class="meth">GET</span><code  id="get-img">https://go-apod.herokuapp.com/image</code>
-        </div>
-        <h4 class="response-heading">Response</h4>
-        <img src="https://go-apod.herokuapp.com/image" class="response-img" />
-      </div>
-      <div class="part">
-      <h3>Full Info</h3>
-      <div class="request-wrap">
-        <span class="meth">GET</span><code id="get-apod">https://go-apod.herokuapp.com/apod</code>
-      </div>
-      <h4 class="response-heading">Response</h4>
-<pre id="response"><code>
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://metatags.io/" />
+        <meta
+          property="og:title"
+          content="Go-APOD API - Astronomy Picture of the Day"
+        />
+        <meta
+          property="og:description"
+          content="A free, CORS-enabled, no-auth wrapper for NASA's APOD API"
+        />
+        <meta property="og:image" content="assets/pwa/banner.png" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta
+          property="twitter:title"
+          content="Go-APOD API - Astronomy Picture of the Day"
+        />
+        <meta
+          property="twitter:description"
+          content="A free, CORS-enabled, no-auth wrapper for NASA's APOD API"
+        />
+        <meta property="twitter:image" content="assets/pwa/banner.png" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Kanit:wght@800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <main>
+          <!-- Links to GH and API docs -->
+          <section class="link-wrapper">
+            <a href="https://github.com/lissy93/go-apod" class="link-to">
+              <p class="link-title">View on GitHub</p>
+              <div class="link-sub-wrap">
+                <img src="assets/icons/github.svg" class="link-icon" />
+                <p class="link-description">
+                  View and edit source code, or deploy your own instance
+                </p>
+              </div>
+            </a>
+            <a href="#api-docs" class="link-to">
+              <p class="link-title">API Docs</p>
+              <div class="link-sub-wrap">
+                <img src="assets/icons/api-docs.svg" class="link-icon" />
+                <p class="link-description">
+                  A free, no-auth, CORS-enabled API for easily fetching APOD
+                </p>
+              </div>
+            </a>
+          </section>
+          <!-- Todays image and description -->
+          <section class="today-wrapper" id="#today">
+            <h1 class="main-title">Astronomy Picture of the Day</h1>
+            <img
+              class="apod-picture"
+              id="apod-picture"
+              src="https://go-apod.herokuapp.com/image"
+              alt="Astronomy Picture of the Day"
+            />
+            <iframe class="apod-iframe" id="apod-dynamic-content"></iframe>
+            <div id="loader">
+              <img src="assets/icons/loader.svg" class="loader-svg" />
+              <p class="loader-text">Loading...</p>
+            </div>
+            <div id="error">
+              <p class="err-title">Error Fetching Data from NASA</p>
+              <p id="err-msg">Check the console for more info</p>
+            </div>
+            <div class="apod-info">
+              <h2 id="apod-title"></h2>
+              <p class="meta-wrap">
+                <span id="apod-date"></span><span id="apod-copyright"></span>
+              </p>
+              <p id="apod-explanation"></p>
+              <a id="apod-hd-link"></a>
+            </div>
+          </section>
+          <!-- API docs -->
+          <section class="api-wrapper" id="api-docs">
+            <h2>API</h2>
+            <div class="part">
+              <h3>Raw Image</h3>
+              <div class="request-wrap">
+                <span class="meth">GET</span
+                ><code id="get-img">https://go-apod.herokuapp.com/image</code>
+              </div>
+              <h4 class="response-heading">Response</h4>
+              <img
+                src="https://go-apod.herokuapp.com/image"
+                class="response-img"
+              />
+            </div>
+            <div class="part">
+              <h3>Full Info</h3>
+              <div class="request-wrap">
+                <span class="meth">GET</span
+                ><code id="get-apod">https://go-apod.herokuapp.com/apod</code>
+              </div>
+              <h4 class="response-heading">Response</h4>
+              <pre id="response"><code>
   {
     "copyright":"island universe",
     "date":"2018-12-28",
@@ -112,13 +144,16 @@
     "url":"https://apod.nasa.gov/apod/image/1812/NGC1365_HaLRGBpugh1024.jpg"
   }       
 </code></pre>
-</div>
-
-    </section>
-  </main>
-  <footer class="i-have-feet">
-    Licensed under <a href="https://github.com/Lissy93/go-apod/blob/master/LICENSE">MIT</a>,
-    © <a href="https://aliciasykes.com">Alicia Sykes</a> 2022
-  </footer>
-</body>
+            </div>
+          </section>
+        </main>
+        <footer class="i-have-feet">
+          Licensed under
+          <a href="https://github.com/Lissy93/go-apod/blob/master/LICENSE"
+            >MIT</a
+          >, © <a href="https://aliciasykes.com">Alicia Sykes</a> 2022
+        </footer>
+      </body>
+    </html>
+  </head>
 </html>
