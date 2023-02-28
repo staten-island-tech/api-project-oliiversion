@@ -3,7 +3,7 @@
   "description": "A CORS-enabled, no-auth wrapper to NASA's Astronomy Picture of the Day",
   "keywords": [ "NASA", "APOD", "API", "Go" ],
   "website": "https://apod.as93.net",
-  "repository": "https://github.com/Lissy93/go-apod",
+  "repository": "https://github.com/oliiversion/create-task",
   "logo": "https://i.ibb.co/0fv7k6T/milky-way.png",
   "success_url": "/",
   "env": {
